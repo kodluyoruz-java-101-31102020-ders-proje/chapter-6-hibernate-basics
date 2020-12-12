@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+           
+<hibernate-configuration>
+
+    <session-factory>
+    
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/company_db?allowPublicKeyRetrieval=true&amp;useSSL=false</property>
+        
+       	<property name="hbm2ddl.auto">none</property>
+       	<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+        
+        <mapping class="com.demo.hibernate.app.entity.Employee"/>
+        <mapping class="com.demo.hibernate.app.entity.Department"/>
+        <mapping class="com.demo.hibernate.app.entity.Salary"/>
+        
+    </session-factory>
+    
+    <!-- Birden fazla veritabanına bağlanmak için session-factory kısımlarını ayrı ayrı konfigüre etmek etmek gerekiyor. 
+    <session-factory name="postgresql">
+    
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">secret</property>
+        <property name="hibernate.connection.password">secret</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost/test?user=fred&password=secret&ssl=true</property>
+        
+       	<property name="hbm2ddl.auto">none</property>
+       	<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+        
+        <mapping class="com.pure.hibernate.sample.entity.Employee"/>
+        <mapping class="com.pure.hibernate.sample.entity.Department"/>
+        <mapping class="com.pure.hibernate.sample.entity.Salary"/>
+        
+    </session-factory>
+     -->
+    
+</hibernate-configuration>
